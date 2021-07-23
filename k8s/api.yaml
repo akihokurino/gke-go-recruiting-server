@@ -49,7 +49,7 @@ spec:
           command:
             [
               "/cloud_sql_proxy",
-              "-instances=gke-go-sample:asia-northeast1:gke-go-sample-db=tcp:0.0.0.0:3306",
+              "-instances=gke-go-sample:asia-northeast1:db=tcp:0.0.0.0:3306",
               "-credential_file=/var/secrets/gcp/credentials.json",
             ]
           volumeMounts:
