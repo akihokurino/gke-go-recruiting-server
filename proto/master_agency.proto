@@ -1,0 +1,11 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_agency.proto";
+
+service MasterAgencyQuery {
+    rpc List (core.Empty) returns (entity.AgencyList);
+    rpc Get (entity.AgencyID) returns (entity.Agency);
+}

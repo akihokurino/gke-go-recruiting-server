@@ -1,0 +1,39 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_company.proto";
+
+service OpeCompanyQuery {
+    rpc ListByFilter (OpeCompanyFilterParams) returns (entity.CompanyList);
+    rpc CountByFilter (OpeCompanyCountFilterParams) returns (core.Count);
+    rpc Get (entity.CompanyID) returns (entity.Company);
+}
+
+service OpeCompanyCommand {
+    rpc Create (OpeCompanyCreateParams) returns (entity.CompanyID);
+}
+
+message OpeCompanyFilterParams {
+    core.Pager pager = 1;
+    string company_id = 2;
+    string company_name = 3;
+}
+
+message OpeCompanyCountFilterParams {
+    string company_id = 1;
+    string company_name = 2;
+}
+
+message OpeCompanyCreateParams {
+    entity.Company.Rank rank = 1;
+    entity.Company.RankType rank_type = 2;
+    string name = 3;
+    string name_kana = 4;
+    string postal_code = 5;
+    string pref_id = 6;
+    string address = 7;
+    string building = 8;
+    string phone_number = 9;
+}

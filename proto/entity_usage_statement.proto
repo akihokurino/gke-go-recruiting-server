@@ -1,0 +1,21 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "entity_contract.proto";
+
+message UsageStatementID {
+    string id = 1;
+}
+
+message UsageStatement {
+    string id = 1;
+    string department_id = 2;
+    entity.MainContract main = 3;
+    uint64 price = 5;
+    string created_at = 6;
+}
+
+message UsageStatementList {
+    repeated UsageStatement items = 1;
+}

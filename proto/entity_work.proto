@@ -1,0 +1,89 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "entity_department.proto";
+
+message WorkID {
+    string id = 1;
+}
+
+message WorkIDList {
+    repeated string ids = 1;
+}
+
+message Work {
+    enum Merit {
+        Merit_Unknown = 0;
+        Merit_Beginner_Welcome = 1;
+        Merit_Experienced_Welcome = 2;
+        Merit_Student_Welcome = 3;
+    }
+
+    enum Type {
+        Type_Unknown = 0;
+        Type_Try = 1;
+        Type_Shot = 2;
+    }
+
+    enum Job {
+        Job_Unknown = 0;
+        Job_Floor_Lady = 1;
+        Job_Counter_Lady = 2;
+        Job_Hall_Staff = 3;
+    }
+
+    enum Status {
+        Status_Unknown = 0;
+        Status_Prepare = 1;
+        Status_NG = 2;
+        Status_Review = 3;
+        Status_Reserved = 4;
+        Status_Active = 5;
+        Status_Early_Finish = 6;
+        Status_Finish = 7;
+    }
+
+    string id = 1;
+    string department_id = 2;
+    Status status = 3;
+    Type work_type = 4;
+    Job job_code = 5;
+    string title = 6;
+    string content = 7;
+    string date_from = 38;
+    string date_to = 39;
+    string created_at = 40;
+    string updated_at = 41;
+    repeated WorkImage images = 42;
+    repeated WorkMovie movies = 43;
+    repeated Merit merits = 44;
+    bool is_new = 50;
+    entity.Department department = 51;
+}
+
+message WorkList {
+    repeated Work items = 1;
+}
+
+message WorkImage {
+    string id = 1;
+    string work_id = 2;
+    string url = 3;
+	  uint64 view_order = 4;
+	  string comment = 5;
+}
+
+message WorkMovie {
+    string id = 1;
+    string work_id = 2;
+    string url = 3;
+}
+
+message WorkOverview {
+    string id = 1;
+    string department_id = 2;
+    string title = 3;
+    string content = 4;
+    string image_url = 5;
+}

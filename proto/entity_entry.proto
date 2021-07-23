@@ -1,0 +1,60 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "entity_user.proto";
+
+message Entry {
+    enum PreferredContactMethod {
+        PreferredContactMethod_Unknown = 0;
+        PreferredContactMethod_Tel = 1;
+        PreferredContactMethod_Mail = 2;
+    }
+
+    enum Status {
+        Status_Unknown = 0;
+        Status_InProgress = 1;
+        Status_Done = 2;
+        Status_Denied = 3;
+    }
+
+    string id = 1;
+    string department_id = 2;
+    string work_id = 3;
+    string fullname = 4;
+    string fullname_kana = 5;
+    string birthdate = 6;
+    User.Gender gender = 7;
+    string phone_number = 8;
+    string email = 9;
+    string question = 10;
+    User.Category category = 11;
+    string pref_id = 12;
+    PreferredContactMethod preferred_contact_method = 13;
+    string preferred_contact_time = 14;
+    Status status = 15;
+    string created_at = 16;
+    string updated_at = 17;
+}
+
+message EntryList {
+    repeated Entry items = 1;
+}
+
+message OtherEntry {
+    enum By {
+        By_Unknown = 0;
+    }
+
+    string id = 1;
+    string department_id = 2;
+    string work_id = 3;
+    By by = 4;
+    Entry.Status status = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message OtherEntryList {
+    repeated OtherEntry items = 1;
+}

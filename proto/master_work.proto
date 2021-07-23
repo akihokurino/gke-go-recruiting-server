@@ -1,0 +1,49 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_work.proto";
+import "entity_department.proto";
+
+service MasterWorkQuery {
+    rpc ListByFilter (MasterWorkFilterParams) returns (entity.WorkList);
+    rpc CountByFilter (MasterWorkCountFilterParams) returns (core.Count);
+    rpc Get (entity.WorkID) returns (entity.Work);
+}
+
+service MasterWorkCommand {
+    rpc Accept (entity.WorkID) returns (core.Empty);
+    rpc Deny (entity.WorkID) returns (core.Empty);
+}
+
+message MasterWorkFilterParams {
+    core.Pager pager = 1;
+    entity.Work.Status status = 2;
+    string work_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string company_id = 6;
+    string agency_id = 7;
+    string sales_id = 8;
+    entity.Department.BusinessCondition business_condition = 9;
+    entity.Work.Type work_type = 10;
+    core.DateRange date_from_range = 11;
+    core.DateRange date_to_range = 12;
+    string pref_id = 13;
+}
+
+message MasterWorkCountFilterParams {
+    entity.Work.Status status = 1;
+    string work_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string company_id = 5;
+    string agency_id = 6;
+    string sales_id = 7;
+    entity.Department.BusinessCondition business_condition = 8;
+    entity.Work.Type work_type = 9;
+    core.DateRange date_from_range = 10;
+    core.DateRange date_to_range = 11;
+    string pref_id = 12;
+}

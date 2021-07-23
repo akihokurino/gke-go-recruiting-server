@@ -1,0 +1,6 @@
+.idea
+proto/go
+.build/main
+di/wire_gen.go
+.mod
+db/mysql_data

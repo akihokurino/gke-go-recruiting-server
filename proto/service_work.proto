@@ -1,0 +1,56 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_work.proto";
+import "entity_department.proto";
+
+service WorkQuery {
+    rpc SearchEach (SearchWorkParams) returns (entity.WorkList);
+    rpc SearchCount (SearchWorkCountParams) returns (core.Count);
+    rpc GetMulti (entity.WorkIDList) returns (entity.WorkList);
+    rpc Get (entity.WorkID) returns (entity.Work);
+}
+
+enum SearchWorkOrder {
+    Newer = 0;
+    HourPayment_Higher = 1;
+    DayPayment_Higher = 2;
+}
+
+message SearchWorkParams {
+    core.Pager pager = 1;
+    string q = 2;
+    entity.Department.BusinessCondition business_condition = 3;
+    string pref_id = 4;
+    string m_area_id = 5;
+    string s_area_id = 6;
+    string rail_id = 7;
+    string station_id = 8;
+    entity.Work.Merit merit = 9;
+    SearchWorkOrder order = 11;
+}
+
+message SearchWorkCountParams {
+    string q = 1;
+    entity.Department.BusinessCondition business_condition = 2;
+    string pref_id = 3;
+    string m_area_id = 4;
+    string s_area_id = 5;
+    string rail_id = 6;
+    string station_id = 7;
+    entity.Work.Merit merit = 8;
+    SearchWorkOrder order = 10;
+}
+
+message RelatedWorkParams {
+    entity.Department.BusinessCondition business_condition = 1;
+    string m_area_id = 2;
+    string s_area_id = 3;
+}
+
+message RecommendWords {
+    repeated string treatment = 1;
+    repeated string area = 2;
+}

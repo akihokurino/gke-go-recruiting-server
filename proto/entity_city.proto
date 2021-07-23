@@ -1,0 +1,30 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message PrefectureID {
+    string id = 1;
+}
+
+message Prefecture {
+    string id = 1;
+    string name = 2;
+    uint64 work_count = 3;
+}
+
+message PrefectureList {
+    repeated Prefecture items = 1;
+}
+
+message City {
+    string id = 1;
+    string name = 2;
+    string name_kana = 3;
+    string area_name = 4;
+    string area_name_kana = 5;
+    uint64 work_count = 6;
+}
+
+message CityList {
+    repeated City items = 1;
+}

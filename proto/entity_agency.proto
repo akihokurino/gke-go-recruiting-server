@@ -1,0 +1,22 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message AgencyID {
+    string id = 1;
+}
+
+message Agency {
+    string id = 1;
+    string name = 2;
+    string name_kana = 3;
+    string postal_code = 4;
+    string pref_id = 5;
+    string address = 6;
+    string created_at = 7;
+    string updated_at = 8;
+}
+
+message AgencyList {
+    repeated Agency items = 1;
+}

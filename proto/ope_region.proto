@@ -1,0 +1,11 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "entity_region.proto";
+import "entity_city.proto";
+
+service OpeRegionQuery {
+    rpc MAreaListByPrefecture (entity.PrefectureID) returns (entity.AreaList);
+    rpc SAreaListByMArea (entity.MAreaID) returns (entity.AreaList);
+}

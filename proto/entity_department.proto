@@ -1,0 +1,79 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message DepartmentID {
+    string id = 1;
+}
+
+message Department {
+    enum BusinessCondition {
+        BusinessCondition_Unknown = 0;
+        BusinessCondition_Cabaret_Club = 1;
+        BusinessCondition_New_Club = 2;
+        BusinessCondition_Club = 3;
+    }
+
+    enum Status {
+        Status_Unknown = 0;
+        Status_OK = 1;
+        Status_REVIEW = 2;
+        Status_NG = 3;
+    }
+
+    string id = 1;
+    string agency_id = 2;
+    string company_id = 3;
+    string sales_id = 4;
+    string name = 5;
+    BusinessCondition business_condition = 7;
+    string postal_code = 8;
+    string pref_id = 9;
+    string pref_name = 10;
+    string city_id = 11;
+    string address = 12;
+    string building = 13;
+    string phone_number = 14;
+    string m_area_id = 18;
+    string s_area_id = 19;
+    double latitude = 20;
+    double longitude = 21;
+    string created_at = 23;
+    string updated_at = 24;
+    Status status = 25;
+    repeated DepartmentImage images = 26;
+    repeated DepartmentStation stations = 27;
+    string sales_name = 29;
+}
+
+message DepartmentList {
+    repeated Department items = 1;
+}
+
+message DepartmentImage {
+    string id = 1;
+    string department_id = 2;
+    string url = 3;
+}
+
+message DepartmentStation {
+    string id = 1;
+    string department_id = 2;
+    string line_id = 3;
+    string rail_id = 4;
+    string rail_name = 5;
+    string station_id = 6;
+    string station_name = 7;
+}
+
+message DepartmentOverview {
+    string id = 1;
+    string agency_id = 2;
+    string name = 3;
+    repeated DepartmentStationOverview stations = 4;
+}
+
+message DepartmentStationOverview {
+    string station_id = 1;
+    string station_name = 2;
+}

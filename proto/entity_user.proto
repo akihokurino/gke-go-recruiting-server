@@ -1,0 +1,18 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message User {
+    enum Gender {
+        Gender_Unknown = 0;
+        Gender_Male = 1;
+        Gender_Female = 2;
+    }
+
+    enum Category {
+        Category_Unknown = 0;
+        Category_Student = 1;
+        Category_Freeter = 2;
+        Category_Employee = 3;
+    }
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_city.proto";
+
+service CityQuery {
+    rpc PrefectureList (core.Empty) returns (entity.PrefectureList);
+    rpc CityListByPrefecture (entity.PrefectureID) returns (entity.CityList);
+}

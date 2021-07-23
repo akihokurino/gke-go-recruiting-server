@@ -1,0 +1,41 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_entry.proto";
+import "entity_department.proto";
+
+service MasterEntryQuery {
+    rpc ListByFilter (MasterEntryFilterParams) returns (entity.EntryList);
+    rpc CountByFilter (MasterEntryCountFilterParams) returns (core.Count);
+}
+
+message MasterEntryFilterParams {
+    core.Pager pager = 1;
+    string work_id = 2;
+    string company_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string official_id = 6;
+    string date_from = 7;
+    string date_to = 8;
+    string agency_id = 9;
+    string sales_id = 10;
+    entity.Department.BusinessCondition business_condition = 11;
+    string pref_id = 12;
+}
+
+message MasterEntryCountFilterParams {
+    string work_id = 1;
+    string company_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string official_id = 5;
+    string date_from = 6;
+    string date_to = 7;
+    string agency_id = 8;
+    string sales_id = 9;
+    entity.Department.BusinessCondition business_condition = 10;
+    string pref_id = 11;
+}

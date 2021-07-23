@@ -1,0 +1,26 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_entry.proto";
+import "entity_user.proto";
+
+service EntryCommand {
+    rpc Create (EntryParams) returns (core.Empty);
+}
+
+message EntryParams {
+    string work_id = 1;
+    string fullname = 2;
+    string fullname_kana = 3;
+    string birthdate = 4;
+    entity.User.Gender gender = 5;
+    string phone_number = 6;
+    string email = 7;
+    string question = 8;
+    entity.User.Category category = 9;
+    string pref_id = 10;
+    entity.Entry.PreferredContactMethod preferred_contact_method = 11;
+    string preferred_contact_time = 12;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message MainProduct {
+    enum Plan {
+        Plan_Unknown = 0;
+        Plan_A = 1;
+        Plan_B = 2;
+    }
+
+    Plan plan = 1;
+    uint64 price = 2;
+}
+
+message MainProductList {
+    repeated MainProduct items = 1;
+}

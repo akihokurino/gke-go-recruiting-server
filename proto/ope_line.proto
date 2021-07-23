@@ -1,0 +1,15 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "entity_line.proto";
+
+service OpeLineQuery {
+    rpc ListByDistance (LineListByDistanceParams) returns (entity.LineList);
+}
+
+message LineListByDistanceParams {
+    double latitude = 1;
+    double longitude = 2;
+    uint64 distance_km = 3;
+}

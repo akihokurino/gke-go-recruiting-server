@@ -1,0 +1,10 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_product.proto";
+
+service MasterProductQuery {
+    rpc ListMain (core.Empty) returns (entity.MainProductList);
+}

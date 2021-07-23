@@ -1,0 +1,17 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "entity_line.proto";
+import "entity_city.proto";
+
+service LineQuery {
+    rpc RailListByPrefecture (entity.PrefectureID) returns (entity.RailList);
+    rpc RailListByCompany (RailListByCompanyParams) returns (entity.RailList);
+    rpc StationListByRail (entity.RailID) returns (entity.StationList);
+    rpc RailCompanyListByPrefecture (entity.PrefectureID) returns (entity.RailCompanyList);
+}
+
+message RailListByCompanyParams {
+    string company_name = 1;
+}

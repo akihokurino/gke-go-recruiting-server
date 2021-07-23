@@ -1,0 +1,23 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_account.proto";
+
+service OpeAccountQuery {
+    rpc List (core.Empty) returns (entity.AgencyAccountList);
+    rpc Get (entity.AgencyAccountID) returns (entity.AgencyAccount);
+}
+
+service OpeAccountCommand {
+    rpc Create (CreateAgencyAccountParams) returns (entity.AgencyAccount);
+    rpc Delete (entity.AgencyAccountID) returns (core.Empty);
+}
+
+message CreateAgencyAccountParams {
+    string email = 1;
+    string password = 2;
+    string name = 3;
+    string nameKana = 4;
+}

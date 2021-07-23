@@ -1,0 +1,33 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "entity_product.proto";
+
+message MainContractID {
+    string id = 1;
+}
+
+message MainContract {
+    enum Status {
+        Status_Unknown = 0;
+        Status_Review = 1;
+        Status_OK = 2;
+        Status_NG = 3;
+    }
+
+    string id = 1;
+    string department_id = 2;
+    Status status = 3;
+    MainProduct.Plan plan = 4;
+    string date_from = 5;
+    string date_to = 6;
+    uint64 price = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
+message MainContractList {
+    repeated MainContract items = 1;
+}
+

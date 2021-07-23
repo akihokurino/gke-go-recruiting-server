@@ -1,0 +1,79 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_department.proto";
+
+service OpeDepartmentQuery {
+    rpc ListByFilter (OpeDepartmentFilterParams) returns (entity.DepartmentList);
+    rpc CountByFilter (OpeDepartmentCountFilterParams) returns (core.Count);
+    rpc Get (entity.DepartmentID) returns (entity.Department);
+}
+
+service OpeDepartmentCommand {
+    rpc Create (OpeDepartmentCreateParams) returns (entity.DepartmentID);
+    rpc Update (OpeDepartmentUpdateParams) returns (core.Empty);
+    rpc UpdateSales (OpeDepartmentUpdateSalesParams) returns (core.Empty);
+}
+
+message OpeDepartmentFilterParams {
+    core.Pager pager = 1;
+    entity.Department.Status status = 2;
+    string company_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string sales_id = 6;
+    string phone_number = 7;
+}
+
+message OpeDepartmentCountFilterParams {
+    entity.Department.Status status = 1;
+    string company_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string sales_id = 5;
+    string phone_number = 6;
+}
+
+message OpeDepartmentCreateParams {
+    string company_id = 1;
+    string sales_id = 2;
+    string name = 3;
+    entity.Department.BusinessCondition business_condition = 5;
+    string postal_code = 6;
+    string pref_id = 7;
+    string city_id = 8;
+    string address = 9;
+    string building = 10;
+    string phone_number = 11;
+    string m_area_id = 15;
+    string s_area_id = 16;
+    double latitude = 17;
+    double longitude = 18;
+    repeated string image_urls = 19;
+    repeated string line_ids = 20;
+}
+
+message OpeDepartmentUpdateParams {
+    string id = 1;
+    string name = 2;
+    entity.Department.BusinessCondition business_condition = 4;
+    string postal_code = 5;
+    string pref_id = 6;
+    string city_id = 7;
+    string address = 8;
+    string building = 9;
+    string phone_number = 10;
+    string m_area_id = 14;
+    string s_area_id = 15;
+    double latitude = 16;
+    double longitude = 17;
+    repeated string image_urls = 18;
+    repeated string line_ids = 19;
+}
+
+message OpeDepartmentUpdateSalesParams {
+    string department_id = 1;
+    string sales_id = 2;
+}

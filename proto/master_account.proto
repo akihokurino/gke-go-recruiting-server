@@ -1,0 +1,32 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "entity_agency.proto";
+import "entity_account.proto";
+import "core.proto";
+
+service MasterAccountQuery {
+    rpc ListAgencyAccount (entity.AgencyID) returns (entity.AgencyAccountList);
+    rpc GetAgencyAccount (entity.AgencyAccountID) returns (entity.AgencyAccount);
+    rpc ListAllAgencyAccount (core.Empty) returns (entity.AgencyAccountList);
+}
+
+service MasterAccountCommand {
+    rpc CreateAdministrator (CreateAdministratorParams) returns (entity.Administrator);
+    rpc CreateAgency (CreateAgencyAccountByMasterParams) returns (entity.AgencyAccount);
+}
+
+message CreateAdministratorParams {
+    string email = 1;
+    string password = 2;
+    string name = 3;
+}
+
+message CreateAgencyAccountByMasterParams {
+    string email = 1;
+    string password = 2;
+    string name = 3;
+    string nameKana = 4;
+    string agency_id = 5;
+}

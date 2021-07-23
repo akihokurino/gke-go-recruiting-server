@@ -1,0 +1,73 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_work.proto";
+import "entity_department.proto";
+
+service OpeWorkQuery {
+    rpc ListByFilter (OpeWorkFilterParams) returns (entity.WorkList);
+    rpc CountByFilter (OpeWorkCountFilterParams) returns (core.Count);
+    rpc Get (entity.WorkID) returns (entity.Work);
+}
+
+service OpeWorkCommand {
+    rpc Create (OpeWorkCreateParams) returns (entity.WorkID);
+    rpc Update (OpeWorkUpdateParams) returns (core.Empty);
+    rpc EarlyFinish (entity.WorkID) returns (core.Empty);
+}
+
+message OpeWorkFilterParams {
+    core.Pager pager = 1;
+    entity.Work.Status status = 2;
+    string work_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string sales_id = 6;
+    entity.Department.BusinessCondition business_condition = 8;
+    entity.Work.Type work_type = 9;
+}
+
+message OpeWorkCountFilterParams {
+    entity.Work.Status status = 1;
+    string work_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string sales_id = 5;
+    entity.Department.BusinessCondition business_condition = 7;
+    entity.Work.Type work_type = 8;
+}
+
+message OpeWorkCreateParams {
+    string department_id = 2;
+    entity.Work.Type work_type = 3;
+    entity.Work.Job job_code = 4;
+    string title = 5;
+    string content = 6;
+    string date_from = 37;
+    string date_to = 38;
+    repeated OpeWorkImageParams images = 39;
+    repeated string movie_urls = 40;
+    repeated entity.Work.Merit merits = 41;
+}
+
+message OpeWorkUpdateParams {
+    string work_id = 1;
+    entity.Work.Type work_type = 2;
+    entity.Work.Job job_code = 3;
+    string title = 4;
+    string content = 5;
+    string date_from = 36;
+    string date_to = 37;
+    repeated OpeWorkImageParams images = 38;
+    repeated string movie_urls = 39;
+    repeated entity.Work.Merit merits = 40;
+}
+
+// リクエストパラメータ
+message OpeWorkImageParams {
+    string url = 1;
+    uint64 view_order = 2;
+    string comment = 3;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_entry.proto";
+
+service OpeEntryQuery {
+    rpc ListByFilter (OpeEntryFilterParams) returns (entity.EntryList);
+    rpc CountByFilter (OpeEntryCountFilterParams) returns (core.Count);
+}
+
+message OpeEntryFilterParams {
+    core.Pager pager = 1;
+    string date_from = 2;
+    string date_to = 3;
+    string company_id = 4;
+    string department_id = 5;
+    string department_name = 6;
+    string sales_id = 7;
+    entity.Entry.Status status = 8;
+}
+
+message OpeEntryCountFilterParams {
+    string date_from = 1;
+    string date_to = 2;
+    string company_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string sales_id = 6;
+    entity.Entry.Status status = 7;
+}

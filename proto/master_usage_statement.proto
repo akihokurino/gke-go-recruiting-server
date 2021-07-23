@@ -1,0 +1,33 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_usage_statement.proto";
+import "entity_product.proto";
+
+service MasterUsageStatementQuery {
+    rpc ListByFilter (MasterUsageStatementFilterParams) returns (entity.UsageStatementList);
+    rpc CountByFilter (MasterUsageStatementCountFilterParams) returns (core.Count);
+}
+
+message MasterUsageStatementFilterParams {
+    core.Pager pager = 1;
+    string agency_id = 2;
+    string company_id = 3;
+    string department_id = 4;
+    entity.MainProduct.Plan main_product_plan = 5;
+    string date_from = 7;
+    string date_to = 8;
+    bool exclude_free = 9;
+}
+
+message MasterUsageStatementCountFilterParams {
+    string agency_id = 1;
+    string company_id = 2;
+    string department_id = 3;
+    entity.MainProduct.Plan main_product_plan = 4;
+    string date_from = 6;
+    string date_to = 7;
+    bool exclude_free = 8;
+}

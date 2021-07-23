@@ -1,0 +1,32 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - --target
+      - deploy
+      - --tag=gcr.io/$PROJECT_ID/batch:$BUILD_ID
+      - --build-arg
+      - _ENTRYPOINT=entrypoint/batch/main.go
+      - .
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - push
+      - gcr.io/$PROJECT_ID/batch:$BUILD_ID
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - beta
+      - container
+      - clusters
+      - get-credentials
+      - batch-cluster
+      - --zone=asia-northeast1-c
+      - --project=$PROJECT_ID
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args:
+      - set
+      - image
+      - cronjob/proceed-work-status-batch
+      - proceed-work-status-container=gcr.io/$PROJECT_ID/batch:$BUILD_ID
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-c'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=batch-cluster'

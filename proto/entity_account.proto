@@ -1,0 +1,28 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message AdministratorID {
+    string id = 1;
+}
+
+message Administrator {
+    string id = 1;
+    string email = 2;
+    string name = 3;
+}
+
+message AgencyAccountID {
+    string id = 1;
+}
+
+message AgencyAccount {
+    string id = 1;
+    string agency_id = 2;
+    string email = 3;
+    string name = 4;
+}
+
+message AgencyAccountList {
+    repeated AgencyAccount items = 1;
+}

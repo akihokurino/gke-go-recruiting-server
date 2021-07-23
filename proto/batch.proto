@@ -1,0 +1,9 @@
+syntax = "proto3";
+package batch;
+option go_package = "./pb";
+
+enum BatchTask {
+    ReIndexSearch = 0;
+    ProceedWorkStatus = 1;
+    ReOrderWork = 2;
+}

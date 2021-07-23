@@ -1,0 +1,62 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_department.proto";
+
+service MasterDepartmentQuery {
+    rpc ListByFilter (MasterDepartmentFilterParams) returns (entity.DepartmentList);
+    rpc CountByFilter (MasterDepartmentCountFilterParams) returns (core.Count);
+    rpc Get (entity.DepartmentID) returns (entity.Department);
+}
+
+service MasterDepartmentCommand {
+    rpc Accept (entity.DepartmentID) returns (core.Empty);
+    rpc Deny (entity.DepartmentID) returns (core.Empty);
+    rpc Update (MasterDepartmentUpdateParams) returns (core.Empty);
+    rpc UpdateSales (MasterDepartmentUpdateSalesParams) returns (core.Empty);
+}
+
+message MasterDepartmentFilterParams {
+    core.Pager pager = 1;
+    entity.Department.Status status = 2;
+    string company_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string agency_id = 6;
+    string sales_id = 7;
+}
+
+message MasterDepartmentCountFilterParams {
+    entity.Department.Status status = 1;
+    string company_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string agency_id = 5;
+    string sales_id = 6;
+}
+
+message MasterDepartmentUpdateParams {
+    string id = 1;
+    string name = 2;
+    string name_kana = 3;
+    entity.Department.BusinessCondition business_condition = 4;
+    string postal_code = 5;
+    string pref_id = 6;
+    string city_id = 7;
+    string address = 8;
+    string building = 9;
+    string phone_number = 10;
+    string m_area_id = 14;
+    string s_area_id = 15;
+    double latitude = 16;
+    double longitude = 17;
+    repeated string image_urls = 19;
+    repeated string line_ids = 21;
+}
+
+message MasterDepartmentUpdateSalesParams {
+    string department_id = 1;
+    string sales_id = 2;
+}

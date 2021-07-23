@@ -1,0 +1,61 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message RailID {
+    string id = 1;
+}
+
+message Rail {
+    string id = 1;
+    string name_1 = 2;
+    string name_kana_1 = 3;
+    string name_2 = 4;
+    string name_kana_2 = 5;
+    string kind_name = 6;
+    string company_name_1 = 7;
+    string company_name_kana_1 = 8;
+    string company_name_2 = 9;
+    uint64 work_count = 10;
+}
+
+message RailList {
+    repeated Rail items = 1;
+}
+
+message RailCompany {
+    string name_1 = 1;
+    string name_kana_1 = 2;
+    string name_2 = 3;
+    string kind_name = 4;
+}
+
+message RailCompanyList {
+    repeated RailCompany items = 1;
+}
+
+message Station {
+    string id = 1;
+    string pref_id = 2;
+    string name = 3;
+    string name_kana = 4;
+    uint64 stop_order = 5;
+    uint64 work_count = 6;
+}
+
+message StationList {
+    repeated Station items = 1;
+}
+
+message Line {
+    string id = 1;
+    string rail_name = 2;
+    string station_name = 3;
+    double latitude = 4;
+    double longitude = 5;
+    uint64 work_count = 6;
+}
+
+message LineList {
+    repeated Line items = 1;
+}

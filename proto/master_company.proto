@@ -1,0 +1,25 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_company.proto";
+
+service MasterCompanyQuery {
+    rpc ListByFilter (MasterCompanyFilterParams) returns (entity.CompanyList);
+    rpc CountByFilter (MasterCompanyCountFilterParams) returns (core.Count);
+    rpc Get (entity.CompanyID) returns (entity.Company);
+}
+
+message MasterCompanyFilterParams {
+    core.Pager pager = 1;
+    string company_id = 2;
+    string company_name = 3;
+    string agency_id = 4;
+}
+
+message MasterCompanyCountFilterParams {
+    string company_id = 1;
+    string company_name = 2;
+    string agency_id = 3;
+}

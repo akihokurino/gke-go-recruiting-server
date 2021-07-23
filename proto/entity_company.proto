@@ -1,0 +1,48 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message CompanyID {
+    string id = 1;
+}
+
+message Company {
+    enum Rank {
+        Rank_Unknown = 0;
+        Rank_Stock = 1;
+        Type_Limited = 2;
+        Type_Other = 99;
+    }
+
+    enum RankType {
+        RankType_Unknown = 0;
+        RankType_Before = 1;
+        RankType_After = 2;
+    }
+
+    enum Status {
+        Status_Unknown = 0;
+        Status_Review = 1;
+        Status_OK = 2;
+        Status_NG = 3;
+    }
+
+    string id = 1;
+    string agency_id = 2;
+    RankType rank_type = 3;
+    Rank rank = 4;
+    string name = 5;
+    string name_kana = 6;
+    string postal_code = 8;
+    string pref_id = 9;
+    string address = 10;
+    string building = 11;
+    string phone_number = 12;
+    Status status = 13;
+    string created_at = 14;
+    string updated_at = 15;
+}
+
+message CompanyList {
+    repeated Company items = 1;
+}

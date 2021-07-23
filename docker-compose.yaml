@@ -1,0 +1,51 @@
+version: "3.5"
+services:
+#  local_db:
+#    build: ./db
+#    ports:
+#      - '3306:3306'
+#    volumes:
+#      - ./db/initdb.d:/docker-entrypoint-initdb.d
+#      - ./db/mysql_data:/var/lib/mysql
+#    environment:
+#      MYSQL_DATABASE: gke-go-sample
+#      MYSQL_USER: gke-go-sample_master
+#      MYSQL_PASSWORD: gke-go-sample_master
+#      MYSQL_ROOT_PASSWORD: password
+  db:
+    image: gcr.io/cloudsql-docker/gce-proxy:1.16
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./config/gcp-key.json:/config
+    command:
+      - "/cloud_sql_proxy"
+      - "-instances=gke-go-sample:asia-northeast1:db=tcp:0.0.0.0:3306"
+      - "-credential_file=/config"
+  api:
+    build:
+      context: .
+      target: local-dev
+    image: gke-go-sample-api-local:latest
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - GO_ENV=/app/config/.env
+    command:
+      - "sh"
+      - "-c"
+      - "make vendor && make gen && go run entrypoint/api/main.go"
+  batch:
+    build:
+      context: .
+      target: local-dev
+    image: gke-go-sample-batch-local:latest
+    volumes:
+      - .:/app
+      - .mod:/go/pkg/mod
+    working_dir: /app
+    environment:
+      - GO_ENV=/app/config/.env

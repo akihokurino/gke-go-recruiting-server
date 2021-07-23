@@ -1,0 +1,17 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message MAreaID {
+    string id = 1;
+}
+
+message Area {
+    string id = 1;
+    string name = 2;
+    uint64 work_count = 3;
+}
+
+message AreaList {
+    repeated Area items = 1;
+}

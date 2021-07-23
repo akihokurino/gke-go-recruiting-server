@@ -1,0 +1,46 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_contract.proto";
+import "entity_product.proto";
+
+service OpeContractQuery {
+    rpc ListMainByFilter (OpeMainContractFilterParams) returns (entity.MainContractList);
+    rpc CountMainByFilter (OpeMainContractCountFilterParams) returns (core.Count);
+    rpc GetMain (entity.MainContractID) returns (entity.MainContract);
+}
+
+service OpeContractCommand {
+    rpc CreateMain (OpeMainContractCreateParams) returns (core.Empty);
+}
+
+message OpeMainContractFilterParams {
+    core.Pager pager = 1;
+    entity.MainContract.Status status = 2;
+    string company_id = 3;
+    string department_id = 4;
+    string department_name = 5;
+    string date_from = 6;
+    string date_to = 7;
+    entity.MainProduct.Plan plan = 8;
+    string sales_id = 9;
+}
+
+message OpeMainContractCountFilterParams {
+    entity.MainContract.Status status = 1;
+    string company_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string date_from = 5;
+    string date_to = 6;
+    entity.MainProduct.Plan plan = 7;
+    string sales_id = 8;
+}
+
+message OpeMainContractCreateParams {
+    string department_id = 1;
+    entity.MainProduct.Plan plan = 2;
+    string date_from = 3;
+}

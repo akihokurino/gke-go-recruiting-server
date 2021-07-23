@@ -1,0 +1,30 @@
+syntax = "proto3";
+package service;
+option go_package = "./pb";
+
+import "core.proto";
+import "entity_usage_statement.proto";
+
+service OpeUsageStatementQuery {
+    rpc ListByFilter (OpeUsageStatementFilterParams) returns (entity.UsageStatementList);
+    rpc CountByFilter (OpeUsageStatementCountFilterParams) returns (core.Count);
+}
+
+message OpeUsageStatementFilterParams {
+    core.Pager pager = 1;
+    string company_id = 2;
+    string department_id = 3;
+    string department_name = 4;
+    string usage_statement_id = 5;
+    string date_from = 6;
+    string date_to = 7;
+}
+
+message OpeUsageStatementCountFilterParams {
+    string company_id = 1;
+    string department_id = 2;
+    string department_name = 3;
+    string usage_statement_id = 4;
+    string date_from = 5;
+    string date_to = 6;
+}
