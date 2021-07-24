@@ -7,4 +7,5 @@
 - gorm
 - k8s
 - cloudbuild
+- algolia
 
