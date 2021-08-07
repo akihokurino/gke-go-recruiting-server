@@ -1,4 +1,4 @@
-# gke-go-sample
+# gke-go-recruiting-server
 
 ## 構成 
 - go 1.16
