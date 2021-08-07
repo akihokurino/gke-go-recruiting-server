@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"gke-go-sample/di"
+	"gke-go-recruiting-server/di"
 
 	"github.com/joho/godotenv"
 )

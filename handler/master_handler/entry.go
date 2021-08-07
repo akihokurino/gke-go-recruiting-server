@@ -3,10 +3,10 @@ package master_handler
 import (
 	"context"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	"gke-go-sample/handler/response"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/handler/response"
+	pb "gke-go-recruiting-server/proto/go/pb"
 )
 
 func NewEntryQuery(

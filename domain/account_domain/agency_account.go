@@ -1,6 +1,6 @@
 package account_domain
 
-import "gke-go-sample/domain"
+import "gke-go-recruiting-server/domain"
 
 type AgencyAccount struct {
 	ID       domain.FirebaseUserID

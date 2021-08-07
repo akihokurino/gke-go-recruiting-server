@@ -1,7 +1,7 @@
 package department_domain
 
 import (
-	"gke-go-sample/domain/master_domain"
+	"gke-go-recruiting-server/domain/master_domain"
 )
 
 type StationWith struct {

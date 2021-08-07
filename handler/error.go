@@ -2,10 +2,10 @@ package handler
 
 import (
 	"context"
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 	"strconv"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 	"github.com/twitchtv/twirp"

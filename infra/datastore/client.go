@@ -3,7 +3,7 @@ package datastore
 import (
 	"context"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 
 	"cloud.google.com/go/datastore"
 

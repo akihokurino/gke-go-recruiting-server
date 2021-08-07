@@ -7,10 +7,10 @@ import (
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain/account_domain"
 )
 
 func NewAdminAuthorization(cp adapter.ContextProvider, administratorRepo adapter.AdministratorRepo) adapter.AdminAuthorization {

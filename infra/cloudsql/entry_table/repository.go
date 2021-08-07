@@ -5,14 +5,14 @@ import (
 
 	"gorm.io/gorm"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/entry_domain"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/entry_domain"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 )
 
 func NewRepo() adapter.EntryRepo {

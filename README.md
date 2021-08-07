@@ -2,10 +2,11 @@
 
 ## 構成 
 - go 1.16
+- kubernetes
 - twirp 8.0
 - wire
 - gorm
-- k8s
-- cloudbuild
+- cloud build
+- cloud sql  
 - algolia
 

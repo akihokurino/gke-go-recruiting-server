@@ -1,7 +1,7 @@
 package statement_domain
 
 import (
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 )
 
 type UsageWith struct {

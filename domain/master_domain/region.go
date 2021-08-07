@@ -1,6 +1,6 @@
 package master_domain
 
-import "gke-go-sample/domain"
+import "gke-go-recruiting-server/domain"
 
 type Region struct {
 	Geocode1          string

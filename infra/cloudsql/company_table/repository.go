@@ -3,16 +3,16 @@ package company_table
 import (
 	"context"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/company_domain"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/company_domain"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 )
 
 func NewRepo() adapter.CompanyRepo {

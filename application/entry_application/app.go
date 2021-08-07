@@ -1,7 +1,7 @@
 package entry_application
 
 import (
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 )
 
 type app struct {

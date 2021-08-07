@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 
 	gosql "github.com/go-sql-driver/mysql"
 	"gorm.io/driver/mysql"

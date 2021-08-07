@@ -4,26 +4,26 @@ import (
 	"database/sql"
 	"time"
 
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 
-	"gke-go-sample/domain/department_domain"
+	"gke-go-recruiting-server/domain/department_domain"
 
-	"gke-go-sample/infra/cloudsql/work_active_plan_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_active_plan_table"
 
-	"gke-go-sample/infra/cloudsql/work_merit_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_merit_table"
 
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/domain/work_domain"
 
-	"gke-go-sample/infra/cloudsql/work_movie_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_movie_table"
 
-	"gke-go-sample/infra/cloudsql/work_image_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_image_table"
 
-	"gke-go-sample/infra/cloudsql/department_table"
+	"gke-go-recruiting-server/infra/cloudsql/department_table"
 
 	"github.com/guregu/null"
 
-	"gke-go-sample/domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 )
 
 var (
@@ -46,7 +46,6 @@ type Entity struct {
 	Content      string    `gorm:"column:content"`
 	DateFrom     time.Time `gorm:"column:date_from"`
 	DateTo       time.Time `gorm:"column:date_to"`
-	ForSEO       bool      `gorm:"column:for_seo"`
 	CreatedAt    time.Time `gorm:"column:created_at"`
 	UpdatedAt    time.Time `gorm:"column:updated_at"`
 

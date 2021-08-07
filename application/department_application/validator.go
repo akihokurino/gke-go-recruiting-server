@@ -1,9 +1,9 @@
 package department_application
 
 import (
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 )

@@ -6,9 +6,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain/account_domain"
-	"gke-go-sample/domain/company_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain/account_domain"
+	"gke-go-recruiting-server/domain/company_domain"
 
 	"github.com/pkg/errors"
 )

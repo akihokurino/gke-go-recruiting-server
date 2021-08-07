@@ -3,7 +3,7 @@ package account_domain
 import (
 	"time"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 type FirebaseUser struct {

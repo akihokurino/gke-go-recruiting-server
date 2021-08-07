@@ -3,7 +3,7 @@ package firebase
 import (
 	"context"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 
 	firebase "firebase.google.com/go"
 	"google.golang.org/api/option"

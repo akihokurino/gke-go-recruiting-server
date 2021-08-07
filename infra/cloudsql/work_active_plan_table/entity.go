@@ -4,11 +4,11 @@ import (
 	"database/sql"
 	"time"
 
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 
-	"gke-go-sample/infra/cloudsql/main_contract_table"
+	"gke-go-recruiting-server/infra/cloudsql/main_contract_table"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/guregu/null"
 )

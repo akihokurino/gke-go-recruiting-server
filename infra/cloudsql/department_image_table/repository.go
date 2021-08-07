@@ -3,17 +3,17 @@ package department_image_table
 import (
 	"context"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/domain/department_domain"
+	"gke-go-recruiting-server/domain/department_domain"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 )
 
 func NewRepo() adapter.DepartmentImageRepo {

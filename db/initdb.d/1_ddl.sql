@@ -1,5 +1,5 @@
-CREATE SCHEMA IF NOT EXISTS `gke-go-sample` DEFAULT CHARACTER SET utf8mb4;
-USE `gke-go-sample`;
+CREATE SCHEMA IF NOT EXISTS `gke-go-recruiting-server` DEFAULT CHARACTER SET utf8mb4;
+USE `gke-go-recruiting-server`;
 
 CREATE TABLE IF NOT EXISTS `administrators` (
   `id` VARCHAR(255) NOT NULL,

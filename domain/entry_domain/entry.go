@@ -5,9 +5,9 @@ import (
 
 	"github.com/google/uuid"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 type Entry struct {

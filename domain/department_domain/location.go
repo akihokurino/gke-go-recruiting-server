@@ -1,6 +1,6 @@
 package department_domain
 
-import "gke-go-sample/domain"
+import "gke-go-recruiting-server/domain"
 
 type Location struct {
 	MAreaID   domain.MAreaID

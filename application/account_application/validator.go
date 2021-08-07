@@ -1,8 +1,8 @@
 package account_application
 
 import (
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 )

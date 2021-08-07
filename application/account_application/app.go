@@ -1,8 +1,8 @@
 package account_application
 
 import (
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain/account_domain"
 )
 
 type app struct {

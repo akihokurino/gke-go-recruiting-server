@@ -8,25 +8,25 @@ services:
 #      - ./db/initdb.d:/docker-entrypoint-initdb.d
 #      - ./db/mysql_data:/var/lib/mysql
 #    environment:
-#      MYSQL_DATABASE: gke-go-sample
-#      MYSQL_USER: gke-go-sample_master
-#      MYSQL_PASSWORD: gke-go-sample_master
+#      MYSQL_DATABASE: gke-go-recruiting-server
+#      MYSQL_USER: gke-go-recruiting-server_master
+#      MYSQL_PASSWORD: gke-go-recruiting-server_master
 #      MYSQL_ROOT_PASSWORD: password
   db:
     image: gcr.io/cloudsql-docker/gce-proxy:1.16
     ports:
       - '3306:3306'
     volumes:
-      - ./config/gcp-key.json:/config
+      - ./config/gcp.json:/config
     command:
       - "/cloud_sql_proxy"
-      - "-instances=gke-go-sample:asia-northeast1:db=tcp:0.0.0.0:3306"
+      - "-instances=gke-go-recruiting-server:asia-northeast1:db=tcp:0.0.0.0:3306"
       - "-credential_file=/config"
   api:
     build:
       context: .
       target: local-dev
-    image: gke-go-sample-api-local:latest
+    image: gke-go-recruiting-server-api-local:latest
     ports:
       - '3000:3000'
     volumes:
@@ -42,7 +42,7 @@ services:
     build:
       context: .
       target: local-dev
-    image: gke-go-sample-batch-local:latest
+    image: gke-go-recruiting-server-batch-local:latest
     volumes:
       - .:/app
       - .mod:/go/pkg/mod

@@ -3,15 +3,15 @@ package agency_table
 import (
 	"context"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/agency_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/agency_domain"
 )
 
 func NewRepo() adapter.AgencyRepo {

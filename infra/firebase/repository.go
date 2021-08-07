@@ -3,15 +3,15 @@ package firebase
 import (
 	"context"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/domain/account_domain"
 
 	"firebase.google.com/go/auth"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 )
 
 func NewRepo(fc adapter.FirebaseAppFactory) adapter.FirebaseRepo {

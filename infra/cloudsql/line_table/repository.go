@@ -4,16 +4,16 @@ import (
 	"context"
 	"fmt"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/domain/master_domain"
+	"gke-go-recruiting-server/domain/master_domain"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
 )
 
 func NewRepo() adapter.LineRepo {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 type Usage struct {

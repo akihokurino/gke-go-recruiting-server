@@ -61,7 +61,7 @@ deploy: deploy-secret
 	deploy-batch.sh
 
 proxy_db:
-	cloud_sql_proxy -credential_file=./config/gcp-key.json -instances=gke-go-sample:asia-northeast1:db=tcp:0.0.0.0:3306
+	cloud_sql_proxy -credential_file=./config/gcp.json -instances=akiho-playground:asia-northeast1:db=tcp:0.0.0.0:3306
 
 format:
 	find . -print | grep --regex '.*\.go' | xargs goimports -w -local

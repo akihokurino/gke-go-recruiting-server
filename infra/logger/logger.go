@@ -3,7 +3,7 @@ package logger
 import (
 	"context"
 	"fmt"
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 	"log"
 	"os"
 )

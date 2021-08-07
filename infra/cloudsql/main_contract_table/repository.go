@@ -4,17 +4,17 @@ import (
 	"context"
 	"time"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
 	"github.com/pkg/errors"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 )
 
 func NewRepo() adapter.MainContractRepo {

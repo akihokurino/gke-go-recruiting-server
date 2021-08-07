@@ -3,9 +3,9 @@ package adapter
 import (
 	"context"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/domain/account_domain"
 
 	firebase "firebase.google.com/go"
 )

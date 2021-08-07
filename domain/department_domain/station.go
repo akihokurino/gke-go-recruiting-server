@@ -1,7 +1,7 @@
 package department_domain
 
 import (
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/google/uuid"
 )

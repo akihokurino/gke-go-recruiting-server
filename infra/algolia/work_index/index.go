@@ -1,8 +1,8 @@
 package work_index
 
 import (
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/work_domain"
 )
 
 const newerIndexName = "work_newer"

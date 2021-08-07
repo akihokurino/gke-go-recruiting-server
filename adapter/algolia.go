@@ -2,11 +2,11 @@ package adapter
 
 import (
 	"context"
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/domain/work_domain"
 )
 
 type WorkIndexSortSetting struct {

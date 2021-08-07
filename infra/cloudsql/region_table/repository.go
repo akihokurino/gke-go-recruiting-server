@@ -5,12 +5,12 @@ import (
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/domain/master_domain"
+	"gke-go-recruiting-server/domain/master_domain"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
 )
 
 func NewRepo() adapter.RegionRepo {

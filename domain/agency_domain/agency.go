@@ -1,6 +1,6 @@
 package agency_domain
 
-import "gke-go-sample/domain"
+import "gke-go-recruiting-server/domain"
 
 type Agency struct {
 	ID         domain.AgencyID

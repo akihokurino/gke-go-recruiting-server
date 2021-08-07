@@ -6,59 +6,59 @@ import (
 	"fmt"
 	"os"
 
-	"gke-go-sample/infra/logger"
+	"gke-go-recruiting-server/infra/logger"
 
-	"gke-go-sample/infra/datastore"
+	"gke-go-recruiting-server/infra/datastore"
 
-	"gke-go-sample/infra/cloudsql/department_station_table"
+	"gke-go-recruiting-server/infra/cloudsql/department_station_table"
 
-	"gke-go-sample/infra/cloudsql/work_active_plan_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_active_plan_table"
 
-	"gke-go-sample/infra/cloudsql/usage_statement"
+	"gke-go-recruiting-server/infra/cloudsql/usage_statement"
 
-	"gke-go-sample/application/contract_application"
+	"gke-go-recruiting-server/application/contract_application"
 
-	"gke-go-sample/handler/ope_handler"
-	"gke-go-sample/infra/cloudsql/main_contract_table"
+	"gke-go-recruiting-server/handler/ope_handler"
+	"gke-go-recruiting-server/infra/cloudsql/main_contract_table"
 
-	"gke-go-sample/application/department_application"
+	"gke-go-recruiting-server/application/department_application"
 
-	"gke-go-sample/application/company_application"
+	"gke-go-recruiting-server/application/company_application"
 
-	"gke-go-sample/infra/cloudsql/administrator_table"
+	"gke-go-recruiting-server/infra/cloudsql/administrator_table"
 
-	"gke-go-sample/application/account_application"
-	"gke-go-sample/infra/cloudsql/agency_account_table"
-	"gke-go-sample/infra/cloudsql/agency_table"
+	"gke-go-recruiting-server/application/account_application"
+	"gke-go-recruiting-server/infra/cloudsql/agency_account_table"
+	"gke-go-recruiting-server/infra/cloudsql/agency_table"
 
-	"gke-go-sample/handler/master_handler"
+	"gke-go-recruiting-server/handler/master_handler"
 
-	"gke-go-sample/application/work_application"
+	"gke-go-recruiting-server/application/work_application"
 
-	"gke-go-sample/infra/cloudsql/work_merit_table"
-	"gke-go-sample/infra/firebase"
+	"gke-go-recruiting-server/infra/cloudsql/work_merit_table"
+	"gke-go-recruiting-server/infra/firebase"
 
-	"gke-go-sample/infra/algolia"
-	"gke-go-sample/infra/algolia/work_index"
+	"gke-go-recruiting-server/infra/algolia"
+	"gke-go-recruiting-server/infra/algolia/work_index"
 
-	"gke-go-sample/application/entry_application"
+	"gke-go-recruiting-server/application/entry_application"
 
-	"gke-go-sample/infra/cloudsql/entry_table"
+	"gke-go-recruiting-server/infra/cloudsql/entry_table"
 
-	"gke-go-sample/handler/user_handler"
-	"gke-go-sample/infra/cloudsql/work_movie_table"
+	"gke-go-recruiting-server/handler/user_handler"
+	"gke-go-recruiting-server/infra/cloudsql/work_movie_table"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/handler"
-	"gke-go-sample/infra/cloudsql"
-	"gke-go-sample/infra/cloudsql/city_table"
-	"gke-go-sample/infra/cloudsql/company_table"
-	"gke-go-sample/infra/cloudsql/department_image_table"
-	"gke-go-sample/infra/cloudsql/department_table"
-	"gke-go-sample/infra/cloudsql/line_table"
-	"gke-go-sample/infra/cloudsql/region_table"
-	"gke-go-sample/infra/cloudsql/work_image_table"
-	"gke-go-sample/infra/cloudsql/work_table"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/handler"
+	"gke-go-recruiting-server/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql/city_table"
+	"gke-go-recruiting-server/infra/cloudsql/company_table"
+	"gke-go-recruiting-server/infra/cloudsql/department_image_table"
+	"gke-go-recruiting-server/infra/cloudsql/department_table"
+	"gke-go-recruiting-server/infra/cloudsql/line_table"
+	"gke-go-recruiting-server/infra/cloudsql/region_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_image_table"
+	"gke-go-recruiting-server/infra/cloudsql/work_table"
 
 	"github.com/google/wire"
 	"google.golang.org/api/option"
@@ -148,7 +148,7 @@ func provideLogger() adapter.CompositeLogger {
 }
 
 func provideDB() adapter.DB {
-	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/db?parseTime=true",
+	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/gke-go-recruiting-server?parseTime=true",
 		os.Getenv("DB_USER"),
 		os.Getenv("DB_PASS"),
 		os.Getenv("DB_HOST"),

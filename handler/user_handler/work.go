@@ -2,12 +2,12 @@ package user_handler
 
 import (
 	"context"
-	"gke-go-sample/handler/response"
+	"gke-go-recruiting-server/handler/response"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
-	"gke-go-sample/adapter"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/adapter"
+	pb "gke-go-recruiting-server/proto/go/pb"
 )
 
 func NewWorkQuery(

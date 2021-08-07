@@ -4,20 +4,20 @@ import (
 	"database/sql"
 	"time"
 
-	"gke-go-sample/infra/cloudsql/agency_account_table"
+	"gke-go-recruiting-server/infra/cloudsql/agency_account_table"
 
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/domain/account_domain"
 
-	"gke-go-sample/infra/cloudsql/department_station_table"
+	"gke-go-recruiting-server/infra/cloudsql/department_station_table"
 
-	"gke-go-sample/domain/department_domain"
+	"gke-go-recruiting-server/domain/department_domain"
 
-	"gke-go-sample/infra/cloudsql/department_image_table"
+	"gke-go-recruiting-server/infra/cloudsql/department_image_table"
 
-	"gke-go-sample/domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/guregu/null"
 )

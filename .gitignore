@@ -4,3 +4,8 @@ proto/go
 di/wire_gen.go
 .mod
 db/mysql_data
+
+config/gcp.json
+config/firebase.json
+config/.env
+config/.batch.env

@@ -5,11 +5,11 @@ import (
 	"net/url"
 	"time"
 
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/domain/work_domain"
 
 	"github.com/guregu/null"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 var (

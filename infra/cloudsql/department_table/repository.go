@@ -3,17 +3,17 @@ package department_table
 import (
 	"context"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/department_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/department_domain"
 )
 
 func NewRepo() adapter.DepartmentRepo {

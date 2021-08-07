@@ -3,11 +3,11 @@ package master_handler
 import (
 	"context"
 
-	"gke-go-sample/domain/product_domain"
-	"gke-go-sample/handler/response"
+	"gke-go-recruiting-server/domain/product_domain"
+	"gke-go-recruiting-server/handler/response"
 
-	"gke-go-sample/adapter"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/adapter"
+	pb "gke-go-recruiting-server/proto/go/pb"
 )
 
 func NewProductQuery(

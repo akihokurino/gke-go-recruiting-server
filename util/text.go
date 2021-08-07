@@ -3,7 +3,7 @@ package util
 import (
 	"unicode/utf8"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 func ValidateTextRange(s string, min int, max int) error {

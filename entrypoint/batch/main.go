@@ -5,8 +5,8 @@ import (
 	"flag"
 	"os"
 
-	"gke-go-sample/di"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/di"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/joho/godotenv"
 )

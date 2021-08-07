@@ -1,4 +1,4 @@
-module gke-go-sample
+module gke-go-recruiting-server
 
 go 1.16
 

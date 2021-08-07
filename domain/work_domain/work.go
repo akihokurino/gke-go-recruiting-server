@@ -3,12 +3,12 @@ package work_domain
 import (
 	"time"
 
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 
 	"github.com/google/uuid"
 
-	"gke-go-sample/domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 )
 
 type Work struct {

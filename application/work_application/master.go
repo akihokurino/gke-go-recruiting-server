@@ -5,8 +5,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/account_domain"
 
 	"github.com/pkg/errors"
 )

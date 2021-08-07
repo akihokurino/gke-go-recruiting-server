@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"time"
 
-	"gke-go-sample/domain/master_domain"
+	"gke-go-recruiting-server/domain/master_domain"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/guregu/null"
 )

@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"os"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
-	"gke-go-sample/adapter"
+	"gke-go-recruiting-server/adapter"
 )
 
 const (

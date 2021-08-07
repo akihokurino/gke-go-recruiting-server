@@ -4,10 +4,10 @@ import (
 	"database/sql"
 	"time"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/work_domain"
 
 	"github.com/guregu/null"
 )

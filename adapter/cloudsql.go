@@ -6,26 +6,26 @@ import (
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/domain/statement_domain"
+	"gke-go-recruiting-server/domain/statement_domain"
 
-	"gke-go-sample/domain/contract_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
 
-	"gke-go-sample/domain/account_domain"
-	"gke-go-sample/domain/agency_domain"
+	"gke-go-recruiting-server/domain/account_domain"
+	"gke-go-recruiting-server/domain/agency_domain"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
-	"gke-go-sample/domain/entry_domain"
+	"gke-go-recruiting-server/domain/entry_domain"
 
-	"gke-go-sample/domain/master_domain"
+	"gke-go-recruiting-server/domain/master_domain"
 
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/domain/work_domain"
 
-	"gke-go-sample/domain/department_domain"
+	"gke-go-recruiting-server/domain/department_domain"
 
-	"gke-go-sample/domain/company_domain"
+	"gke-go-recruiting-server/domain/company_domain"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 type DB func(ctx context.Context) *gorm.DB

@@ -4,12 +4,12 @@ import (
 	"database/sql"
 	"time"
 
-	"gke-go-sample/domain/company_domain"
+	"gke-go-recruiting-server/domain/company_domain"
 
 	"github.com/guregu/null"
 
-	"gke-go-sample/domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 )
 
 var (

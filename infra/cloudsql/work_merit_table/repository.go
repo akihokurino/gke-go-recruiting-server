@@ -3,16 +3,16 @@ package work_merit_table
 import (
 	"context"
 
-	"gke-go-sample/infra/cloudsql"
+	"gke-go-recruiting-server/infra/cloudsql"
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain/work_domain"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain/work_domain"
 )
 
 func NewRepo() adapter.WorkMeritRepo {

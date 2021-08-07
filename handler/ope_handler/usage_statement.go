@@ -3,11 +3,11 @@ package ope_handler
 import (
 	"context"
 
-	pb "gke-go-sample/proto/go/pb"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	"gke-go-sample/handler/response"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/handler/response"
 )
 
 func NewUsageStatementQuery(

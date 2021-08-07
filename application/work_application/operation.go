@@ -7,11 +7,11 @@ import (
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/adapter"
-	"gke-go-sample/domain"
-	"gke-go-sample/domain/account_domain"
-	"gke-go-sample/domain/work_domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/adapter"
+	"gke-go-recruiting-server/domain"
+	"gke-go-recruiting-server/domain/account_domain"
+	"gke-go-recruiting-server/domain/work_domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 )

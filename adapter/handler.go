@@ -6,9 +6,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"gke-go-sample/domain/account_domain"
+	"gke-go-recruiting-server/domain/account_domain"
 
-	"gke-go-sample/domain"
+	"gke-go-recruiting-server/domain"
 )
 
 type ContextProvider interface {

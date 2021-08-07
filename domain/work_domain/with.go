@@ -1,8 +1,8 @@
 package work_domain
 
 import (
-	"gke-go-sample/domain/contract_domain"
-	"gke-go-sample/domain/department_domain"
+	"gke-go-recruiting-server/domain/contract_domain"
+	"gke-go-recruiting-server/domain/department_domain"
 )
 
 type WorkWith struct {

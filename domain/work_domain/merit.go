@@ -1,8 +1,8 @@
 package work_domain
 
 import (
-	"gke-go-sample/domain"
-	pb "gke-go-sample/proto/go/pb"
+	"gke-go-recruiting-server/domain"
+	pb "gke-go-recruiting-server/proto/go/pb"
 
 	"github.com/google/uuid"
 )
